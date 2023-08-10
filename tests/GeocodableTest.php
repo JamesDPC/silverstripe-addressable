@@ -80,7 +80,7 @@ class GeocodableTest extends SapphireTest
      */
     public function testDisableLatLngUpdate()
     {
-        Config::inst()->update(Geocodable::class, 'is_geocodable', false);
+        Config::modify()->set(Geocodable::class, 'is_geocodable', false);
 
         $record = new GeocodableDataObjectTest();
         $record->Address = '101-103 Courtenay Place';
